@@ -7,7 +7,7 @@ LINK:
 
 MyBlog tutorial:
 
-wwww.sunilandroid.com
+http://www.sunilandroid.com/
 
 Copyright 2016 Sunil Gupta
 
