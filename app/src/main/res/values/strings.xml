@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FirebaseDatabaseTest</string>
+    <string name="SignUp">SignUp</string>
+    <string name="SignIn">SignIn</string>
+    <string name="GetUser">Get Notes</string>
+    <string name="addNote">Add Note</string>
+    <string name="title">Tittle</string>
+    <string name="description">Description</string>
+    <string name="user">User</string>
+</resources>

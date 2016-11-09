@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "28732269383",
+    "firebase_url": "https://fir-database-5fc75.firebaseio.com",
+    "project_id": "fir-database-5fc75",
+    "storage_bucket": "fir-database-5fc75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28732269383:android:97941761ec0a498b",
+        "android_client_info": {
+          "package_name": "com.sunil.firebasedatabasetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28732269383-5r5mmasnp4o7be3o2l9qomfe11mv6ed6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPYkslJpriHD0-Qhks-gMSbL6wOYRIaIY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
