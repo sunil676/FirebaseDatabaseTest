@@ -24,6 +24,13 @@ public class Utility {
         dialog.show();
     }
 
+    public static void showDialogMessage(Context context, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage(message)
+                .setPositiveButton(android.R.string.ok, null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
     public static boolean nullCheck(TextInputLayout layout , String label) {
         label = label.replace("*","");

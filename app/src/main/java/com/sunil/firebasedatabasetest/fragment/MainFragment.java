@@ -24,6 +24,10 @@ import butterknife.OnClick;
 public class MainFragment extends Fragment {
 
     public static final String TAG = MainFragment.class.getSimpleName();
+
+    @BindView(R.id.profile)
+    Button profile;
+
     private View rootView;
 
     @BindView(R.id.signup)
@@ -32,6 +36,7 @@ public class MainFragment extends Fragment {
     Button buttonSignIn;
     @BindView(R.id.getUser)
     Button buttonGetUser;
+
 
     OnFragmentInteractionListener mListener;
 
@@ -104,25 +109,34 @@ public class MainFragment extends Fragment {
     }
 
     @OnClick(R.id.signIn)
-    public void onClickSignIn(){
+    public void onClickSignIn() {
 
         mListener.onSignClick();
     }
 
     @OnClick(R.id.signup)
-    public void onClickSignUp(){
+    public void onClickSignUp() {
 
         mListener.onSignUpClick();
     }
 
+    @OnClick(R.id.profile)
+    public void onClickUserProfile() {
+        mListener.getUserProfileClicked();
+    }
+
     @OnClick(R.id.getUser)
-    public void onClickGetUsers(){
+    public void onClickGetUsers() {
         mListener.getUserClicked();
     }
 
     public interface OnFragmentInteractionListener {
         void onSignClick();
+
         void onSignUpClick();
+
         void getUserClicked();
+
+        void getUserProfileClicked();
     }
 }

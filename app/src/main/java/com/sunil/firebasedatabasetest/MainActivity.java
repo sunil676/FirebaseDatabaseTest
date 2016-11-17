@@ -10,13 +10,17 @@ import com.sunil.firebasedatabasetest.fragment.AddNoteFragment;
 import com.sunil.firebasedatabasetest.fragment.MainFragment;
 import com.sunil.firebasedatabasetest.fragment.SignInFragment;
 import com.sunil.firebasedatabasetest.fragment.SignUpFragment;
+import com.sunil.firebasedatabasetest.fragment.UserFragment;
+import com.sunil.firebasedatabasetest.fragment.UserNotesFragment;
 import com.sunil.firebasedatabasetest.utils.SharedPreferenceUtils;
+import com.sunil.firebasedatabasetest.utils.Utility;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnFragmentInteractionListener,
         SignUpFragment.OnFragmentInteractionListener,
         SignInFragment.OnFragmentInteractionListener,
-        AddNoteFragment.UserNotesFragment.OnFragmentInteractionListener,
-        AddNoteFragment.OnFragmentInteractionListener{
+        UserNotesFragment.OnFragmentInteractionListener,
+        AddNoteFragment.OnFragmentInteractionListener,
+        UserFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +56,19 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
     @Override
     public void getUserClicked() {
         if (SharedPreferenceUtils.getInstance(this).getUUID()!= null) {
-            Fragment fragment = AddNoteFragment.UserNotesFragment.newInstance();
+            Fragment fragment = UserNotesFragment.newInstance();
             FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-            fragmentTransaction.addToBackStack(AddNoteFragment.UserNotesFragment.TAG).replace(R.id.fram_container, fragment, AddNoteFragment.UserNotesFragment.TAG).commit();
+            fragmentTransaction.addToBackStack(UserNotesFragment.TAG).replace(R.id.fram_container, fragment, UserNotesFragment.TAG).commit();
         }else{
             Toast.makeText(this, "Please login to access notes.", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void getUserProfileClicked() {
+        Fragment fragment = UserFragment.newInstance();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.addToBackStack(UserFragment.TAG).replace(R.id.fram_container, fragment, UserFragment.TAG).commit();
     }
 
     @Override
@@ -90,5 +101,10 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
         if(getFragmentManager().getBackStackEntryCount() > 1){
             getFragmentManager().popBackStack();
         }
+    }
+
+    @Override
+    public void updateProfileDone() {
+        Utility.showDialogMessage(this, "Upload Completed");
     }
 }

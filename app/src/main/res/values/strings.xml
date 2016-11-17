@@ -7,4 +7,8 @@
     <string name="title">Tittle</string>
     <string name="description">Description</string>
     <string name="user">User</string>
+    <string name="UserProfile">User Profile</string>
+    <string name="upload">Upload</string>
+    <string name="select">Select File</string>
+    <string name="update">Update</string>
 </resources>
